@@ -1,6 +1,10 @@
 var cnv;
+var use =45;
+var e =0;
 var t=45;
+var c = 0;
 var start =0;
+var my = 5.8;
 function centerCanvas() {
   var x = (windowWidth - width) / 2 ;
   var y = (windowHeight - height) / 2;
@@ -18,7 +22,9 @@ function draw()
   // rectangle 1 colour
   fill(0);
   noStroke();
-  rect(310,200,180,20);
+  
+  rect(310,200+e,180,20);
+
   // rectangle 2 colour
   rect(310,550,180,20);
   // code for brown block
@@ -31,24 +37,42 @@ function draw()
      move();
    }
    noFill();  
-   stroke(139,69,19);
+   stroke(128,128,0);
    strokeWeight(4);
-   arc(400, 245, 60, 50, 0.785, 4.5);;
-   arc(400, 280, 60, 50, 0.785, 5.5);
-   arc(400, 315, 60, 50, 0.785, 5.5);
-   arc(400, 350, 60, 50, 0.785, 5.5);
-   arc(400, 385, 60, 50, 0.785, 5.5);
-   arc(400, 420, 60, 50, 0.785, 5.5);
-   arc(400, 455, 60, 50, 0.785, 5.5);
-   arc(400, 490, 60, 50, 0.785, 5.5);
-   arc(400, 525, 60, 50, 2, 5.5);
+   arc(400, 245+my*c*1.07, 60+c, 50-c, 0.785, 4.5);
+   arc(400, 280+my*c*1.01, 60+c, 50-0.5*c, 0.785, 5.5);
+   arc(400, 315+my*c, 60+c, 50-0.5*c, 0.785, 5.5);
+   arc(400, 350+my*c, 60+c, 50-0.5*c, 0.785, 5.5);
+   arc(400, 385+my*c, 60+c, 50-0.5*c, 0.785, 5.5);
+   arc(400, 420+my*c, 60+c, 50-0.5*c, 0.785, 5.5);
+   arc(400, 455+my*c*0.8, 60+c, 50-2*c, 0.785, 5.5);
+   arc(403, 490+my*c/2, 60+1.5*c, 50-2*c, 0.785, 5.5);
+   arc(403, 525+c, 60+1.5*c, 50-2*c, 2, 5.5);
+   
+   
+
 }
 
 function move()
 {
   if(t<155)  
-  t= t+1; 
+  {
+    t=t+1;
+    use = use+1
+    
+  }
+  if(use==155)
+  {
+     if(e<120)
+     {
+       e=e+1;
+       t= t+1;
+       c= c+0.15;
+     }
+  }
+ 
 }
+
 function temp()
 {start =1;    
 }
