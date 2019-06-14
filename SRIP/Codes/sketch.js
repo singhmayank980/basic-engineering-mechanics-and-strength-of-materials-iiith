@@ -19,6 +19,10 @@ function setup() {
 }
 function draw() 
 { background(255,255,255);
+ fill(12,101,145);
+ noStroke();
+  textSize(18);
+text('Compression test on spring', innerWidth / 2 - 400, 25);
   // rectangle 1 colour
   fill(0);
   noStroke();
